@@ -5,36 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THEA — Model Portfolio</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Founders+Grotesk:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Founders+Grotesk:wght@300;400&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-    <!-- Custom Cursor -->
     <div id="cursor"></div>
 
-    <!-- ─── NAV ─── -->
-    nav {
-     position: fixed;
-  top: 0;
-  left: 0;
- right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
+    <nav id="nav">
+        <a class="nav-logo" href="#">Thea</a>
+        <div class="nav-links">
+            <a href="#gallery">Gallery</a>
+            <a href="#editorial">Editorial</a>
+            <a href="#compcard">Comp Card</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-  align-items: center; 
-  padding: 40px 60px; /* Increased padding for a more 'editorial' breath */
-  transition: all 0.4s ease;
-}
-
-    <!-- ─── HERO ─── -->
-<section id="hero">
+    <section id="hero">
         <div class="hero-bg">
              <img src="assets/imgs/DSCF6718.jpg" alt="Thea Lopez" class="hero-main-img">
         </div>
@@ -53,7 +45,6 @@
         </div>
     </section>
 
-    <!-- ─── GALLERY ─── -->
     <section id="gallery">
         <div class="gallery-header reveal">
             <div>
@@ -69,114 +60,27 @@
         </div>
 
         <div class="masonry-grid" id="masonryGrid">
-            <!-- Items 01-09 -->
             <div class="masonry-item" data-index="0">
                 <div class="ph ph-1"><div class="ph-inner">Photo 01</div></div>
                 <div class="masonry-overlay">
-                    <div class="masonry-meta">Vogue Paris <span>/ SS 2026</span></div>
+                    <div class="masonry-meta">Vogue Philippines <span>/ 2026</span></div>
                 </div>
             </div>
             <div class="masonry-item" data-index="1">
                 <div class="ph ph-2"><div class="ph-inner">Photo 02</div></div>
                 <div class="masonry-overlay">
-                    <div class="masonry-meta">Chanel Beauty <span>/ Campaign</span></div>
+                    <div class="masonry-meta">Beauty Campaign <span>/ 2026</span></div>
                 </div>
             </div>
             <div class="masonry-item" data-index="2">
                 <div class="ph ph-3"><div class="ph-inner">Photo 03</div></div>
                 <div class="masonry-overlay">
-                    <div class="masonry-meta">Harper's Bazaar <span>/ Editorial</span></div>
+                    <div class="masonry-meta">Editorial <span>/ Lookbook</span></div>
                 </div>
             </div>
-            <div class="masonry-item" data-index="3">
-                <div class="ph ph-4"><div class="ph-inner">Photo 04</div></div>
-                <div class="masonry-overlay">
-                    <div class="masonry-meta">Dior <span>/ RTW</span></div>
-                </div>
             </div>
-            <div class="masonry-item" data-index="4">
-                <div class="ph ph-5"><div class="ph-inner">Photo 05</div></div>
-                <div class="masonry-overlay">
-                    <div class="masonry-meta">W Magazine <span>/ Cover</span></div>
-                </div>
-            </div>
-            <div class="masonry-item" data-index="5">
-                <div class="ph ph-6"><div class="ph-inner">Photo 06</div></div>
-                <div class="masonry-overlay">
-                    <div class="masonry-meta">Saint Laurent <span>/ FW 2026</span></div>
-                </div>
-            </div>
-            <div class="masonry-item" data-index="6">
-                <div class="ph ph-7"><div class="ph-inner">Photo 07</div></div>
-                <div class="masonry-overlay">
-                    <div class="masonry-meta">Givenchy <span>/ Couture</span></div>
-                </div>
-            </div>
-            <div class="masonry-item" data-index="7">
-                <div class="ph ph-8"><div class="ph-inner">Photo 08</div></div>
-                <div class="masonry-overlay">
-                    <div class="masonry-meta">L'Officiel <span>/ Beauty</span></div>
-                </div>
-            </div>
-            <div class="masonry-item" data-index="8">
-                <div class="ph ph-9"><div class="ph-inner">Photo 09</div></div>
-                <div class="masonry-overlay">
-                    <div class="masonry-meta">Balenciaga <span>/ SS 2026</span></div>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- ─── EDITORIAL HORIZONTAL ─── -->
-    <section id="editorial">
-        <div class="editorial-header reveal">
-            <p class="section-label">Editorial Collection</p>
-            <h2 class="section-title"><em>Silk &amp; Shadows</em></h2>
-        </div>
-
-        <div class="horizontal-track-wrapper" id="hScroll">
-            <div class="horizontal-track">
-                <div class="editorial-card">
-                    <div class="ec-1 ph"><div class="ph-inner" style="min-height:420px">Feature</div></div>
-                    <div class="editorial-caption">
-                        <strong>Maison Margiela · SS 2026</strong>
-                        Photographed by Quentin De Briey
-                    </div>
-                </div>
-                <div class="editorial-card">
-                    <div class="ec-2 ph"><div class="ph-inner" style="min-height:340px">01</div></div>
-                    <div class="editorial-caption">
-                        <strong>Nude Magazine · No. 38</strong>
-                        Styled by Amanda Harlech
-                    </div>
-                </div>
-                <div class="editorial-card">
-                    <div class="ec-3 ph"><div class="ph-inner" style="min-height:380px">02</div></div>
-                    <div class="editorial-caption">
-                        <strong>Acne Studios · Resort</strong>
-                        Creative Direction: Jonny Johansson
-                    </div>
-                </div>
-                <div class="editorial-card">
-                    <div class="ec-4 ph"><div class="ph-inner" style="min-height:340px">03</div></div>
-                    <div class="editorial-caption">
-                        <strong>Numero Tokyo · FW 2026</strong>
-                        Photographed by Koto Bolofo
-                    </div>
-                </div>
-                <div class="editorial-card">
-                    <div class="ec-5 ph"><div class="ph-inner" style="min-height:380px">04</div></div>
-                    <div class="editorial-caption">
-                        <strong>Celine · Campaign 2026</strong>
-                        Directed by Hedi Slimane
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p class="drag-hint">Drag to explore</p>
-    </section>
-
-    <!-- ─── COMP CARD ─── -->
     <section id="compcard">
         <div class="comp-visual reveal">
             <div class="comp-badge">Digital Comp Card</div>
@@ -184,41 +88,25 @@
         </div>
 
         <div class="comp-info reveal">
-            <p class="section-label">Measurements &amp; Details</p>
+            <p class="section-label">Measurements & Details</p>
             <h2 class="section-title">The <em>Comp Card</em></h2>
 
             <div class="stats-grid">
                 <div class="stat-row">
                     <span class="stat-label">Height</span>
-                    <span class="stat-value">5′3″ / 180cm</span>
+                    <span class="stat-value">5′3″</span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Bust</span>
-                    <span class="stat-value">33″ / 84cm</span>
+                    <span class="stat-value">33″</span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Waist</span>
-                    <span class="stat-value">24″ / 61cm</span>
+                    <span class="stat-value">24″</span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Hips</span>
-                    <span class="stat-value">35″ / 89cm</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">Hair</span>
-                    <span class="stat-value">Brunette</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">Eyes</span>
-                    <span class="stat-value">Hazel</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">Shoe</span>
-                    <span class="stat-value">39 EU / 8.5 US</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">Dress</span>
-                    <span class="stat-value">FR 36 / US 4</span>
+                    <span class="stat-value">35″</span>
                 </div>
             </div>
 
@@ -231,46 +119,6 @@
         </div>
     </section>
 
-    <!-- ─── MARQUEE ─── -->
-    <div class="marquee-section">
-        <div class="marquee-track">
-            <span class="marquee-item">Vogue Paris</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Chanel</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Harper's Bazaar</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Saint Laurent</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">W Magazine</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Dior</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Givenchy</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">L'Officiel</span>
-            <span class="marquee-dot">·</span>
-            <!-- Duplicate for loop -->
-            <span class="marquee-item">Vogue Paris</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Chanel</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Harper's Bazaar</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Saint Laurent</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">W Magazine</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Dior</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">Givenchy</span>
-            <span class="marquee-dot">·</span>
-            <span class="marquee-item">L'Officiel</span>
-            <span class="marquee-dot">·</span>
-        </div>
-    </div>
-
-    <!-- ─── ABOUT ─── -->
     <section id="about">
         <div class="about-left reveal">
             <p class="section-label">Biography</p>
@@ -282,89 +130,21 @@
 
         <div class="about-right reveal">
             <p class="about-body">
-                Born in the Philippines and discovered at 16, <strong>Ellen Thea Lopez</strong> has spent the last decade shaping the visual language of modern luxury fashion.
-            </p>
-            <p class="about-body">
-                She has opened and closed for <strong>Chanel, Saint Laurent, and Givenchy</strong>, appeared on the covers of Vogue, Harper's Bazaar, and W Magazine.
+                Born in the Philippines, <strong>Thea Lopez</strong> is shaping the visual language of modern luxury fashion through a lens of minimalist aesthetic and technical precision.
             </p>
             <div class="divider"></div>
             <ul class="rep-list">
-                <li><strong>Elite Model Management</strong> — Paris, London, Milan</li>
-                <li><strong>DNA Models</strong> — New York</li>
-                <li><strong>The Society Management</strong> — Los Angeles</li>
+                <li><strong>Independent Representation</strong> — Manila</li>
+                <li><strong>Booking Inquiries</strong> — thea@example.com</li>
             </ul>
         </div>
     </section>
 
-    <!-- ─── CONTACT ─── -->
-    <section id="contact">
-        <div class="reveal">
-            <p class="section-label">Get in Touch</p>
-            <h2 class="section-title">Book <em>Thea</em></h2>
-        </div>
-
-        <div class="contact-grid">
-            <div class="contact-info reveal">
-                <p>For editorial commissions, commercial campaigns, runway, or brand partnerships, please reach out directly.</p>
-                <div class="social-row">
-                    <a class="social-link" href="#">Instagram</a>
-                    <a class="social-link" href="#">TikTok</a>
-                    <a class="social-link" href="#">LinkedIn</a>
-                </div>
-                <div class="agency-block" style="margin-top:40px">
-                    <p class="agency-label">Primary Representation</p>
-                    <p class="agency-name">Elite Model Management</p>
-                    <p class="agency-contact">booking@elitemodel.com</p>
-                </div>
-            </div>
-
-            <div class="reveal">
-                <div class="contact-form">
-                    <div class="form-group">
-                        <label class="form-label">Your Name</label>
-                        <input type="text" class="form-input" placeholder="Full name">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email Address</label>
-                        <input type="email" class="form-input" placeholder="you@studio.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Booking Type</label>
-                        <select class="form-select">
-                            <option value="">Select a category</option>
-                            <option>Editorial / Magazine</option>
-                            <option>Commercial Campaign</option>
-                            <option>Runway / Show</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Message</label>
-                        <textarea class="form-textarea" placeholder="Project details..."></textarea>
-                    </div>
-                    <button class="submit-btn" type="button">Send Inquiry</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── FOOTER ─── -->
     <footer>
-        <span class="footer-logo">Solène</span>
-        <span class="footer-copy">© 2026 Solène Moreau. All rights reserved.</span>
+        <span class="footer-logo">Thea</span>
+        <span class="footer-copy">© 2026 Thea Lopez. All rights reserved.</span>
     </footer>
 
-    <!-- ─── LIGHTBOX ─── -->
-    <div id="lightbox">
-        <button class="lb-close" id="lbClose">✕ Close</button>
-        <button class="lb-nav" id="lb-prev">‹</button>
-        <div class="lightbox-img-wrap">
-            <div class="lightbox-placeholder" id="lbPlaceholder">Image Preview</div>
-        </div>
-        <button class="lb-nav" id="lb-next">›</button>
-        <div class="lb-counter" id="lbCounter">1 / 9</div>
-    </div>
-
-    <!-- Scripts -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
