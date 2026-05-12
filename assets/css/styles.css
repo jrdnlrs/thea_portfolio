@@ -52,7 +52,7 @@ body {
   opacity: 0.4;
 }
 
-/* ─── NAVIGATION (FIXED ALIGNMENT) ─── */
+/* ─── NAVIGATION ─── */
 nav {
   position: fixed;
   top: 0;
@@ -61,7 +61,7 @@ nav {
   z-index: 100;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Vertically centers logo and links */
+  align-items: center;
   padding: 40px 60px; 
   transition: all 0.4s ease;
 }
@@ -101,28 +101,36 @@ nav.scrolled {
   opacity: 1;
 }
 
-/* ─── HERO SECTION (ALIGNED CONTENT) ─── */
+/* ─── HERO SECTION (FIXED ALIGNMENT) ─── */
 #hero {
   position: relative;
   height: 100vh;
+  width: 100%;
   display: flex;
-  align-items: flex-end; /* Keeps content container at the bottom */
+  align-items: flex-end; /* Keeps text at the bottom */
   overflow: hidden;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: 
-    linear-gradient(to bottom, rgba(14,13,11,0.1) 0%, rgba(14,13,11,0) 40%, rgba(14,13,11,0.7) 85%, var(--ink) 100%),
-    linear-gradient(105deg, #2a2218 0%, #1a1510 40%, #0e0d0b 100%);
+  z-index: 1;
 }
 
-.hero-photo-placeholder {
+/* Dark gradient overlay to make text readable over the photo */
+.hero-bg::after {
+  content: '';
   position: absolute;
   inset: 0;
-  background: #0e0d0b;
-  opacity: 0.4; /* Softens the placeholder background */
+  background: linear-gradient(to bottom, transparent 0%, rgba(14,13,11,0.4) 50%, var(--ink) 95%);
+  z-index: 2;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes your photo fill the screen */
+  object-position: center;
 }
 
 .hero-label {
@@ -135,34 +143,32 @@ nav.scrolled {
   text-transform: uppercase;
   color: var(--accent);
   writing-mode: vertical-rl;
-  z-index: 3;
+  z-index: 5;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  padding: 0 60px 80px; /* Aligns horizontally with Nav padding */
+  z-index: 10;
+  padding: 0 80px 100px; /* Increased padding to prevent overlap with the side label */
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  max-width: 1200px; /* Prevents text from stretching too far */
 }
 
 .hero-subtitle {
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
+  font-size: 0.75rem;
+  letter-spacing: 0.5em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 8px;
+  margin-bottom: 15px;
   opacity: 0;
   animation: fadeUp 1s 0.6s forwards;
 }
 
 .hero-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(4rem, 12vw, 10rem);
+  font-size: clamp(4rem, 10vw, 9rem);
   font-weight: 300;
-  line-height: 0.82; /* Tighter leading for editorial look */
+  line-height: 0.9;
   letter-spacing: -0.02em;
   opacity: 0;
   animation: fadeUp 1.1s 0.3s forwards;
@@ -171,13 +177,30 @@ nav.scrolled {
 .hero-name em { font-style: italic; color: var(--accent); }
 
 .hero-tagline {
-  margin-top: 32px;
-  max-width: 420px;
-  font-size: 0.85rem;
+  margin-top: 25px;
+  max-width: 450px;
+  font-size: 0.9rem;
   line-height: 1.8;
   color: var(--warm-gray);
   opacity: 0;
   animation: fadeUp 1s 0.9s forwards;
+}
+
+.hero-scroll {
+  position: absolute;
+  right: 60px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 10;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: var(--accent);
 }
 
 /* ─── GALLERY ─── */
@@ -187,7 +210,7 @@ nav.scrolled {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .section-label {
@@ -200,7 +223,7 @@ nav.scrolled {
 
 .section-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 300;
 }
 
@@ -223,55 +246,18 @@ nav.scrolled {
   transition: transform 0.8s ease;
 }
 
-.masonry-item:hover .masonry-img {
-  transform: scale(1.05);
-}
-
-/* ─── MARQUEE ─── */
-.marquee-section {
-  padding: 60px 0;
-  border-top: 1px solid rgba(200,169,110,0.15);
-  border-bottom: 1px solid rgba(200,169,110,0.15);
-  overflow: hidden;
-}
-
-.marquee-track {
-  display: flex;
-  gap: 80px;
-  white-space: nowrap;
-  animation: marquee 25s linear infinite;
-}
-
-.marquee-item {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--warm-gray);
-}
-
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+.reveal { opacity: 0; transform: translateY(40px); transition: 0.8s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 1024px) {
-  nav, .hero-content, #gallery { padding: 30px 40px; }
-  .masonry-grid { columns: 2; }
-}
-
-@media (max-width: 600px) {
-  nav { padding: 20px; }
-  .nav-links { display: none; }
+@media (max-width: 900px) {
+  nav, .hero-content { padding: 30px 40px; }
   .hero-name { font-size: 4.5rem; }
-  .masonry-grid { columns: 1; }
+  .masonry-grid { columns: 2; }
 }

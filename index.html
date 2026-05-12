@@ -19,30 +19,34 @@
     <div id="cursor"></div>
 
     <!-- ─── NAV ─── -->
-    <nav id="nav">
-        <a class="nav-logo" href="#">Thea</a>
-        <div class="nav-links">
-            <a href="#gallery">Gallery</a>
-            <a href="#editorial">Editorial</a>
-            <a href="#compcard">Comp Card</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+    nav {
+     position: fixed;
+  top: 0;
+  left: 0;
+ right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center; 
+  padding: 40px 60px; /* Increased padding for a more 'editorial' breath */
+  transition: all 0.4s ease;
+}
 
     <!-- ─── HERO ─── -->
-    <section id="hero">
+<section id="hero">
         <div class="hero-bg">
-            <div class="hero-photo-placeholder">
-                <img src="assets/imgs/DSCF6718.jpg" alt="Thea Lopez" class="hero-main-img">
-            </div>
+             <img src="assets/imgs/DSCF6718.jpg" alt="Thea Lopez" class="hero-main-img">
         </div>
+        
         <div class="hero-label">Portfolio 2026</div>
+        
         <div class="hero-content">
             <p class="hero-subtitle">Model · Fashion · Editorial</p>
             <h1 class="hero-name"> Th<em>ea</em><br>Lopez</h1>
-            <p class="hero-tagline">trained. Quezon City - based. Represented Independently.</p>
+            <p class="hero-tagline">Quezon City - based. Represented Independently.</p>
         </div>
+
         <div class="hero-scroll">
             <span>Scroll</span>
             <div class="scroll-line"></div>
